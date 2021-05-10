@@ -1,4 +1,12 @@
-import win32api, win32con, threading, time
+import os
+try:
+    import win32api, win32con
+except ImportError:
+    input("Pywin32 not Installed!\nPress Enter to continue...")
+    input("Press enter again to start download Pywin32...")
+    os.system("pip install pywin32")
+    print("Installed! Restart the code and try again!")
+import threading, time
 
 VK_CODE = {
     "alt": 0x12,          #alt
